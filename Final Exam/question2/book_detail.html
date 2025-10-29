@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ book.title }}</title>
+</head>
+<body>
+    <h1>{{ book.title }}</h1>
+    <p><strong>Author:</strong> {{ book.author }}</p>
+    <p><strong>Published Year:</strong> {{ book.published_year }}</p>
+    <p><strong>Status:</strong> {% if book.available %}Available{% else %}Not Available{% endif %}</p>
+    <a href="{% url 'list_books' %}">Back to all books</a>
+</body>
+</html>
