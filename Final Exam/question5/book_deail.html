@@ -1,0 +1,13 @@
+{% extends 'library/base.html' %}
+
+{% block title %}{{ book.title }}{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">{{ book.title }}</h1>
+<ul class="list-group">
+    <li class="list-group-item"><strong>Author:</strong> {{ book.author }}</li>
+    <li class="list-group-item"><strong>Published Year:</strong> {{ book.published_year }}</li>
+    <li class="list-group-item"><strong>Status:</strong> {% if book.available %}Available{% else %}Not Available{% endif %}</li>
+</ul>
+<a class="btn btn-secondary mt-3" href="{% url 'list_books' %}">Back to all books</a>
+{% endblock %}
